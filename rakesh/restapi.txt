@@ -1,0 +1,8 @@
+Invoke-RestMethod -Method GET -Uri "http://${server}:8081/artifactory/components-local/product/module/version/MyComponent.zip" -OutFile -FilePath ".\MyComponent.zip"
+Invoke-RestMethod -Method GET -Uri "http://artifactory:8081/artifactory/ehr-local-generic/Providers/Providers.1.2.4.zip" -OutFile -FilePath ".\Providers.1.2.4_RestAPI.zip"
+http://artifactory:8081/artifactory/ehr-local-generic/Providers/Providers.1.2.4.zip
+
+
+PS C:\WINDOWS\system32> Invoke-RestMethod -Method GET -Uri "http://artifactory:8081/artifactory/ehr-local-generic/Providers/Providers.1.2.4.zip" -OutFile "Providers.1.2.4_RestAPI.zip"
+
+
