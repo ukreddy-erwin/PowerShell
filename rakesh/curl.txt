@@ -26,3 +26,7 @@ curl -u admin:Notallowed1! -X GET http://192.168.1.10:8081/api/system/version
 curl -u admin:Notallowed1! -X GET http://192.168.1.10:8081/artifactory/api/system/version
 doskey /history > c:\u.txt
 doskey /history > c:\build_old\curl.txt
+
+
+to get file info:
+curl -u admin:Notallowed1! -X GET http://192.168.1.10:8081/artifactory/api/storage/example-repo-local/Preferences
