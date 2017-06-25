@@ -5,4 +5,16 @@ http://artifactory:8081/artifactory/ehr-local-generic/Providers/Providers.1.2.4.
 
 PS C:\WINDOWS\system32> Invoke-RestMethod -Method GET -Uri "http://artifactory:8081/artifactory/ehr-local-generic/Providers/Providers.1.2.4.zip" -OutFile "Providers.1.2.4_RestAPI.zip"
 
+Invoke-WebRequest is working with passing credentials but with headerfile.
+https://stackoverflow.com/questions/27951561/use-invoke-webrequest-with-a-username-and-password-for-basic-authentication-on-t
+
+$user = "admin"
+$pass = "Notallowed1!"
+$pair = "${user}:${pass}"
+$bytes = [System.Text.Encoding]::ASCII.GetBytes($pair)
+$base64 = [System.Convert]::ToBase64String($bytes)
+$basicAuthValue = "Basic $base64"
+$headers = @{ Authorization = $basicAuthValue }
+invoke-webrequest -Uri http://192.168.1.10:8081/artifactory/example-repo-local/uday.txt -Method Delete -Headers $headers
+
 
