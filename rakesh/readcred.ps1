@@ -55,10 +55,13 @@
         {Write-Verbose "$($MyInvocation.MyCommand.Name):: Function ended"}  
 } 
 
-$FileContent = Get-IniContent ($path + "\BinaryDetails.ini")#"C:\Build\Details.ini"
+$FileContent = Get-IniContent ($path + "C:\test.ini")#"C:\Build\Details.ini"
 
-$From = $FileContent["robot"]["user"]
+$From = $FileContent["user_details"]["username"]
 
-$password = $FileContent["robot"]["password"] | convertto-securestring
-$cred = new-object -typename System.Management.Automation.PSCredential `
-         -argumentlist $From, $password
+$password = $FileContent["user_details"]["password"] | convertto-securestring
+$From 
+$password
+$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($password)
+$UnsecurePassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+$UnsecurePassword
