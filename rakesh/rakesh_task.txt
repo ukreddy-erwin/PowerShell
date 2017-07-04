@@ -1,0 +1,14 @@
+build envronment
+
+post build actions -- collect buold metadata --version pattern 0.0.{v} 
+--------------
+Deployment share plugin
+https://wiki.jenkins.io/display/JENKINS/Deployment+Sphere+Plugin
+
+
+how to delete views
+--------------------
+https://wiki.jenkins.io/display/JENKINS/Editing+or+Replacing+the+All+View
+https://stackoverflow.com/questions/38566563/how-to-delete-a-view-in-jenkins-and-automatically-its-jobs
+
+jenkins global vars 

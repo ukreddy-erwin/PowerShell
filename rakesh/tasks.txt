@@ -1,0 +1,12 @@
+ex: many packages or folders with names
+ehr-local-generic
+ehr-local-npm
+
+ehr-release-generic
+ehr-release-npm
+
+
+move the last file in subfldesr:  sub-<folder>-<verson>.zip and rename the old file to sub-<folder>-<verson>.zip_rc
+
+the subfolder will be given: ehr-local-generic\Audittrail
+

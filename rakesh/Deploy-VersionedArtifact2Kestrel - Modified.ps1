@@ -39,6 +39,7 @@ param(
                               [string] $consulHost = "http://localhost:8500",
                               [string] $EHRvNextMicroserviceVersion = "1.2.4",
                               [string] $backupFolder = "c:\backups"
+							  [string] $isNewService = $true
 )
 
 #Requires -Version 4.0
@@ -206,8 +207,9 @@ if ($need2createnewservice)
 else
 {
     Write-Log "Microsoft service parameters updating..." $deployLogFile
+	if($isNewService){
     nssm set $microsoftServiceName application  $application
-    nssm set $microsoftServiceName appdirectory $appdirectory
+    nssm set $microsoftServiceName appdirectory $appdirectory}
 }
 
 # set all parameters to service
@@ -218,7 +220,8 @@ $objectNamePassword = consul kv get $env:CONSUL_ENVIRONMENT/advancedmd/api/clini
 if (($objectNameUser -eq $NULL) -OR ($objectNamePassword -eq $NULL)){
   Write-Warning "One of NT Service credentials is empty. Check NT Service credentials"    
 }
-
+if($isNewService)
+{
 nssm set $microsoftServiceName start                SERVICE_AUTO_START 
 nssm set $microsoftServiceName displayName          "EHR vNext $microsoftServiceName" 
 nssm set $microsoftServiceName description          "Hosts one of EHR microservices"
@@ -233,7 +236,7 @@ nssm set $microsoftServiceName AppStderrCreationDisposition 2                   
 nssm set $microsoftServiceName DependOnService      Consul
  
 Write-Log "Microsoft service parameters are updated successfully" $deployLogFile
-
+}
 #Clean     
 # start it
 Write-Log "Microsoft service starting..." $deployLogFile

@@ -30,3 +30,13 @@ doskey /history > c:\build_old\curl.txt
 
 to get file info:
 curl -u admin:Notallowed1! -X GET http://192.168.1.10:8081/artifactory/api/storage/example-repo-local/Preferences
+
+
+curl move and copy:
+curl -u admin:Notallowed1! -X PUT http://192.168.1.27:8081/artifactory/gradle-dev-local/August/August-1.1.2.zip -T Desktop/ff.xml
+curl -u admin:Notallowed1! -X POST http://192.168.1.36:8081/artifactory/api/copy/gradle-dev-local/August/August-1.1.2.zip?to=/gradle-release-local/Audis/Audis-1.1.4.zip
+curl -u admin:Notallowed1! -X POST http://192.168.1.27:8081/artifactory/api/copy/gradle-dev-local/August/August-1.1.2.zip?to=/gradle-release-local/Audis/Audis-1.1.4.zip
+
+curl -u admin:Notallowed1! -X POST http://192.168.1.27:8081/artifactory/api/move/gradle-dev-local/August/August-1.1.1.zip?to=/gradle-dev-local/August/August-1.1.1.zip_rc
+doskey /history > c:\1.log
+doskey /history > D:\1.log
