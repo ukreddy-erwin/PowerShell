@@ -1,0 +1,42 @@
+curl
+curl -uadmin:password -XDELETE http://localhost:8080/artifactory/libs-release-local/ch/qos/logback/logback-classic/0.9.9
+curl -uadmin:Notallowed1! -XDELETE http://192.168.1.10:8081/artifactory/webapp/#/artifacts/browse/tree/General/example-repo-local/idman627build5.exe
+curl -uadmin:Notallowed1! -XDELETE http://192.168.1.10:8081/artifactory/webapp/#/artifacts/browse/tree/General/example-repo-local
+curl -u admin:Notallowed1! -XDELETE http://192.168.1.10:8081/artifactory/webapp/#/artifacts/browse/tree/General/example-repo-local
+curl -u admin:Notallowed1! -XDELETE http://192.168.1.10:8081/artifactory/webapp/#/artifacts/browse/tree/General/example-repo-local/idman627build5.xml -T Desktop/ff.xml
+curl -u admin:Notallowed1! -X PUT http://192.168.1.10:8081/artifactory/webapp/#/artifacts/browse/tree/General/example-repo-local/idman627build5.xml -T Desktop/ff.xml
+curl -u admin:Notallowed1! -X PUT http://192.168.1.10:8081/artifactory/webapp/example-repo-local/idman627build5.xml -T Desktop/ff.xml
+curl -u admin:Notallowed1! -X PUT http://192.168.1.10:8081/artifactory/example-repo-local/idman627build5.xml -T Desktop/ff.xml
+curl -u admin:Notallowed1! -X DELETE http://192.168.1.10:8081/artifactory/example-repo-local/idman627build5.xml
+curl -u admin:Notallowed1! -X PUT http://192.168.1.10:8081/artifactory/example-repo-local/idman627build5.xml -T Desktop/ff.xml
+curl -u admin:Notallowed1! -X GET http://192.168.1.10:8081/artifactory/example-repo-local/idman627build5.xml -O Desktop/ffn.xml
+curl -u admin:Notallowed1! -X GET http://192.168.1.10:8081/artifactory/example-repo-local/idman627build5.xml
+curl -O -u admin:Notallowed1! -X GET http://192.168.1.10:8081/artifactory/example-repo-local/idman627build5.xml
+curl -o Desktop/uday.xml -u admin:Notallowed1! -X GET http://192.168.1.10:8081/artifactory/example-repo-local/idman627build5.xml
+curl -o Desktop/uday.xml -X GET http://192.168.1.10:8081/artifactory/example-repo-local/idman627build5.xml
+curl -u admin:Notallowed1! -X PUT http://192.168.1.10:8081/artifactory/webapp/#/artifacts/browse/tree/General/example-repo-local/idman627build5.xml -T Desktop/ff.xml
+curl -u admin:Notallowed1! -X PUT http://192.168.1.10:8081/artifactory/artifacts/example-repo-local/idman627build5.xml -T Desktop/ff.xml
+curl -u admin:Notallowed1! -X PUT http://192.168.1.10:8081/artifactory/example-repo-local/idman627build5.xml -T Desktop/ff.xml
+curl -u admin:Notallowed1! -X DELETE http://192.168.1.10:8081/artifactory/example-repo-local/idman627build5.xml
+curl -u admin:Notallowed1! -X PUT http://192.168.1.10:8081/artifactory/example-repo-local/idman627build5.xml -T Desktop/ff.xml
+curl -u admin:Notallowed1! -X DELETE http://192.168.1.10:8081/artifactory/example-repo-local/idman627build5.xml
+curl -u admin:Notallowed1! -X GET http://192.168.1.10:8081/api/system/version
+curl -o y.html -u admin:Notallowed1! -X GET http://192.168.1.10:8081/api/system/version
+curl -u admin:Notallowed1! -X GET http://192.168.1.10:8081/api/system/version
+curl -u admin:Notallowed1! -X GET http://192.168.1.10:8081/artifactory/api/system/version
+doskey /history > c:\u.txt
+doskey /history > c:\build_old\curl.txt
+
+
+to get file info:
+curl -u admin:Notallowed1! -X GET http://192.168.1.10:8081/artifactory/api/storage/example-repo-local/Preferences
+
+
+curl move and copy:
+curl -u admin:Notallowed1! -X PUT http://192.168.1.27:8081/artifactory/gradle-dev-local/August/August-1.1.2.zip -T Desktop/ff.xml
+curl -u admin:Notallowed1! -X POST http://192.168.1.36:8081/artifactory/api/copy/gradle-dev-local/August/August-1.1.2.zip?to=/gradle-release-local/Audis/Audis-1.1.4.zip
+curl -u admin:Notallowed1! -X POST http://192.168.1.27:8081/artifactory/api/copy/gradle-dev-local/August/August-1.1.2.zip?to=/gradle-release-local/Audis/Audis-1.1.4.zip
+
+curl -u admin:Notallowed1! -X POST http://192.168.1.27:8081/artifactory/api/move/gradle-dev-local/August/August-1.1.1.zip?to=/gradle-dev-local/August/August-1.1.1.zip_rc
+doskey /history > c:\1.log
+doskey /history > D:\1.log
